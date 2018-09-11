@@ -2,12 +2,13 @@ require 'sinatra/base'
 require 'sinatra'
 require './lib/chitter.rb'
 
-class Chitter < Sinatra::Base
+class Chitter_App < Sinatra::Base
 
   enable :sessions
 
-  get '/peeps' do
-    "All peeps"
+  get '/' do
+    @peeps = Chitter.new.get_posts
+    erb :index
   end
 
   run! if app_file == $PROGRAM_NAME
