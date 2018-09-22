@@ -1,3 +1,5 @@
+<% if @username.nil? %>
+<h2> SignUp here to post </h2>
 <form action="/signup" method="post">
   <label for="username">
     <input type="text" name="username">
@@ -8,8 +10,45 @@
   <input type="submit" value="Submit">
 </form>
 
-Welcome <%=@username%>
+<h2> Or log In here </h2>
+  <form action="/login" method="post">
+    <label for="username">
+      <input type="text" name="username">
+    </label>
+    <label for="password">
+      <input type="text" name="password">
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+
+
+<% else %>
+
+<div>
+<h2> Welcome <%=@username%> </h2>
+<h3> Here are all the posts from the past few days </h3>
+</div>
+
+<%end%>
+
+<% if !@auth_token.nil? %>
+
+<div>
+  <form action="/send_post" method="post">
+    <label for="message">
+      <input type="text" name="message">
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<%end%>
+
+
 
 <% @peeps.each do |peep| %>
-<%= "#{peep['body']}" %>
+<div>
+<%="#{peep['user']['handle']} " + "wrote " + "#{peep['body']}" %>
+</div>
+<hr>
 <% end %>
