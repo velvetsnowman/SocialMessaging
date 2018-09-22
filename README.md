@@ -1,8 +1,8 @@
 ### Social messaging site
 
 ```
-git clone
-cd
+git clone https://github.com/velvetsnowman/SocialMessaging.git
+cd SocialMessaging
 ```
 ```
 bundle
