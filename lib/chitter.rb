@@ -75,7 +75,11 @@ class Chitter
     response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
       http.request(request)
     end
+  end
 
+  def view_peep(id)
+    uri = URI.parse("https://chitter-backend-api.herokuapp.com/peeps/#{id}")
+    response = Net::HTTP.get_response(uri)
   end
 
 end

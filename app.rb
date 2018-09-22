@@ -10,7 +10,7 @@ class Chitter_App < Sinatra::Base
     @peeps = Chitter.new.get_posts
     @username = session[:username]
     @auth_token = session[:auth_token]
-    erb :index
+    erb :index  
   end
 
   post '/signup' do
