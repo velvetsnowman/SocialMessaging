@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/danieldenhartog/Documents/Tchat_Box/spec/chitter_spec.rb": [
+      "/Users/danieldenhartog/Documents/ChitterChallengeTechTest v1.0/spec/chitter_spec.rb": [
         1,
         null,
         1,
@@ -19,7 +19,19 @@
         null,
         null
       ],
-      "/Users/danieldenhartog/Documents/Tchat_Box/spec/features/view_peeps_spec.rb": [
+      "/Users/danieldenhartog/Documents/ChitterChallengeTechTest v1.0/spec/features/signing_up_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/danieldenhartog/Documents/ChitterChallengeTechTest v1.0/spec/features/view_peeps_spec.rb": [
         1,
         1,
         1,
@@ -28,6 +40,6 @@
         null
       ]
     },
-    "timestamp": 1536705249
+    "timestamp": 1537620511
   }
 }
