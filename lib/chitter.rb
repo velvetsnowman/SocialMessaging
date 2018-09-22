@@ -53,20 +53,18 @@ class Chitter
     response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
       http.request(request)
     end
-    x = JSON.parse("#{response.body}")
-    return x
+    JSON.parse(response.body)
   end
 
   def send_post(auth_token, body, user_id)
     uri = URI.parse("https://chitter-backend-api.herokuapp.com/peeps")
     request = Net::HTTP::Post.new(uri)
-
     request.content_type = "application/json"
-    request["Authorization"] = auth_token
+    request["Authorization"] = "Token token=" + "#{auth_token}"
     request.body = JSON.dump({
       "peep" => {
         "user_id" => user_id,
-        "body" => "#{body}"
+        "body" => body
       }
     })
 
@@ -77,6 +75,7 @@ class Chitter
     response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
       http.request(request)
     end
+
   end
 
 end

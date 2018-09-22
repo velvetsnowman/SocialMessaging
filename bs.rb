@@ -4,8 +4,8 @@ user = "{\"user_id\":250,\"session_key\":\"_2a_10_j2pAjgjal1P5k88aQhfEP_\"}"
 
 x = JSON.parse(user)
 
-x = "_2""a_10_yab9r_d60gmc9JRv3a6_"
-p x.gsub('"', '')
+p ().to_json
+
 
 
 # curl "https://chitter-backend-api.herokuapp.com/peeps" \

@@ -17,7 +17,7 @@ class Chitter_App < Sinatra::Base
     session[:username] = params[:username]
     @user = Chitter.new.signup(params[:username], params[:password])
     session[:auth_token] = @user['session_key']
-    session[:user_id] = @user['user_id'].to_i
+    session[:user_id] = @user['user_id']
     redirect '/'
   end
 
@@ -25,8 +25,7 @@ class Chitter_App < Sinatra::Base
     session[:username] = params[:username]
     @user = Chitter.new.getSessionKey(params[:username], params[:password])
     session[:auth_token] = @user['session_key']
-    session[:user_id] = @user['user_id'].to_i
-    p session[:user_id]
+    session[:user_id] = @user['user_id']
     redirect '/'
   end
 
