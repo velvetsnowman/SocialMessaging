@@ -45,15 +45,18 @@
 <%end%>
 
 
-
-
 <% @peeps.each do |peep| %>
-<div>
+<div style="background-color:lightblue">
 
-<%="#{peep['user']['handle']} " + "wrote " + "#{peep['body']}" %>
+<p><strong><%="#{peep['user']['handle']}" %></strong></p>
+
+<p><%= "#{peep['body']}" %></p>
 
 <form method="get" action="/view_post">
     <input class='btn btn-primary' type='submit' value='View'>
+</form>
+<form method="get" action="/view_post">
+    <input class='btn btn-primary' type='submit' value='Like'>
 </form>
 </div>
 <hr>
